@@ -57,9 +57,13 @@ h1 {
     flex-direction: column;
     align-content: center;
 }
-
+.container{
+    width: 80%;
+    height: 40px;
+    padding: 20px 0;
+}
 .container-pergunta {
-    width: 75%;
+    width: 90%;
     height: 60px;
     margin: 20px 0;
 }
@@ -87,7 +91,7 @@ h1 {
 .resposta {
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: px;
     font-family: 'Recursive';
     font-style: normal;
     font-weight: 700;
@@ -158,7 +162,7 @@ h1 {
     text-decoration-line: line-through;
 }
 .zap{
-
+    height: 60px;
     font-family: 'Recursive';
     font-style: normal;
     font-weight: 700;
@@ -177,7 +181,17 @@ h1 {
 ion-icon {
     font-size: 28px;
 }
+.naolembrei{
+    font-size: 20px;
+}
+.quaselembrei{
 
+    font-size :20px;
+}
+.lembrei{
+
+    font-size: 20px;
+}
 .off {
     display: none;
 }

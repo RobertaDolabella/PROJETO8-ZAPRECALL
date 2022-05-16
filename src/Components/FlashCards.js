@@ -1,12 +1,78 @@
 import React from 'react';
-import Questions from './Questions';
-import Contador from './Questions'
-import ButtonFinal from './Button-Final';
+import Conclusion from './Conclusion';
 import '../assets/Pages.css'
 import logo from '../assets/images/image1.jpg'
 
-export default function FlashCards(on) {
-  
+function Questions(
+    { questionCover,
+        question,
+        answer,
+        index }
+) {
+    const [on, setOn] = React.useState("cover");
+    function FliptheCard(element) {
+        console.log("entou no flip")
+        console.log(on)
+        if (element === "quest") {
+            setOn("quest")
+            console.log(on)
+        }
+        if (element === "cover") {
+            setOn("cover")
+        }
+        if (element === "ans") {
+            setOn("ans")
+        }
+    }
+
+    const [zap, setZap] = React.useState("off");
+    function CardsPlayed(element) {
+        setZap(element)
+        setOn("over")
+        console.log('foi')
+        List(element)
+
+    }
+    let lista = []
+
+    function List(element) {
+
+        const [count, SetCount] = React.useState(0)
+        SetCount(count + 1)
+        lista.push(element)
+        console.log(lista)
+    }
+
+    return (
+        <div className='container'>
+        <div>
+            <div className={on === "cover" ? "on pergunta" : "off pergunta"}>
+                {questionCover}
+                <button onClick={() => FliptheCard("quest")}><ion-icon className="play-outline" name="play-outline"></ion-icon></button>
+            </div>
+            <div className={on === "quest" ? "on pergunta" : "off pergunta"}>
+                {question}
+                <button onClick={() => FliptheCard("ans")}><ion-icon name="reload-outline"></ion-icon></button>
+            </div>
+            <div className={on === "ans" ? "on resposta" : "off resposta"}>
+                {answer}
+                <div className="buttons-resposta">
+                    <button className='button-nao-lembrei' onClick={() => CardsPlayed("pergunta nao-lembrei", index)}>Não lembrei </button>
+                    <button className="button-quase-nao-lembrei" onClick={() => CardsPlayed("pergunta quase-nao-lembrei", index)}>Quase não lembrei </button>
+                    <button className='button-zap' onClick={() => CardsPlayed("pergunta zap", index)}>Zap!</button>
+                </div>
+            </div>
+            <div className={zap}>
+                {questionCover}
+            </div>
+        </div>
+        </div>
+
+    )
+}
+
+export default function FlashCards(count,setCount) {
+
     const questiontoShuffle = [
         {
             question: "O que é JSX?",
@@ -72,14 +138,7 @@ export default function FlashCards(on) {
             question: questionsShuflled[3].question,
             answer: questionsShuflled[3].answer,
             i: "off",
-            container:"container-pergunta"
-        },
-        {
-            questionCover: "nada",
-            question: questionsShuflled[2].question,
-            answer: questionsShuflled[2].answer,
-            i: "off",
-            container: "off"
+            container: "container-pergunta"
         }]
 
     return (
@@ -90,11 +149,7 @@ export default function FlashCards(on) {
                 questionCover={element.questionCover}
                 question={element.question}
                 answer={element.answer}
-                label={element.i}
             />)}
-         <Contador />
-         <ButtonFinal/>
-  
         </div>
     )
 }
