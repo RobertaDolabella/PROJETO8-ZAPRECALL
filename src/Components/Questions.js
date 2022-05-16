@@ -1,9 +1,10 @@
 import React from 'react';
+import Conclusion from './Conclusion';
 export default function Questions(
     { questionCover,
         question,
         answer,
-        index }
+        index, container, label }
 ) {
     const [on, setOn] = React.useState("cover");
     function FliptheCard(element) {
@@ -22,14 +23,18 @@ export default function Questions(
     }
    
     const [zap, setZap] = React.useState("off");
+    const [count, setCount] = React.useState(0);
     function CardsPlayed(element) {
         setZap(element)
         setOn("over")
        console.log('foi')
+       Contador()
+      
     }
 
     return (
-        <div className='container-pergunta'>
+        <div>
+        <div className={container}>
             <div className={on === "cover" ? "on pergunta" : "off pergunta"}>
                 {questionCover}
                 <button onClick={() => FliptheCard("quest")}><ion-icon className="play-outline" name="play-outline"></ion-icon></button>
@@ -49,7 +54,16 @@ export default function Questions(
             <div className={zap}>
                 {questionCover}
             </div>
-
+            </div>
+            <div className={label}>  
+                 < Conclusion conclui={c}/>
+            </div>
+         
         </div>
     )
 }
+let c =-1
+function Contador(){
+    c = c+1
+    return c
+};

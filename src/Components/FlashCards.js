@@ -1,12 +1,12 @@
 import React from 'react';
 import Questions from './Questions';
-import Conclusion from './Conclusion';
+import Contador from './Questions'
+import ButtonFinal from './Button-Final';
 import '../assets/Pages.css'
 import logo from '../assets/images/image1.jpg'
 
-
-export default function FlashCards(on,zap, setZap,props) {
-
+export default function FlashCards(on) {
+  
     const questiontoShuffle = [
         {
             question: "O que é JSX?",
@@ -49,38 +49,52 @@ export default function FlashCards(on,zap, setZap,props) {
             questionCover: 'Pergunta 1',
             question: questionsShuflled[0].question,
             answer: questionsShuflled[0].answer,
-            i: 0
+            i: "off",
+            container: "container-pergunta"
 
         },
         {
             questionCover: 'Pergunta 2',
             question: questionsShuflled[1].question,
             answer: questionsShuflled[1].answer,
-            i: 0
+            i: "off",
+            container: "container-pergunta"
         },
         {
             questionCover: 'Pergunta 3',
             question: questionsShuflled[2].question,
             answer: questionsShuflled[2].answer,
-            i: 0
+            i: "off",
+            container: "container-pergunta"
         },
         {
             questionCover: 'Pergunta 4',
             question: questionsShuflled[3].question,
             answer: questionsShuflled[3].answer,
-            i: 0
+            i: "off",
+            container:"container-pergunta"
+        },
+        {
+            questionCover: "nada",
+            question: questionsShuflled[2].question,
+            answer: questionsShuflled[2].answer,
+            i: "off",
+            container: "off"
         }]
 
     return (
         <div className='FlashCards Page'>
             <h1><img src={logo} />ZapRecall</h1>
             {questionCards.map(element => <Questions
+                container={element.container}
                 questionCover={element.questionCover}
                 question={element.question}
                 answer={element.answer}
-                index={element.i}
+                label={element.i}
             />)}
-         <Conclusion />
+         <Contador />
+         <ButtonFinal/>
+  
         </div>
     )
 }

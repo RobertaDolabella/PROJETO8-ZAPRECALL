@@ -1,14 +1,10 @@
-import React from 'react';
-export default function Conclusion() {
-    console.log('entrou')
-    const [qtd, setQtd] = React.useState(0);
-
-	function aumentarQtd() {
-		setQtd(qtd+1);
-	}
+import Contador from './Questions'
+export default function Conclusion(props) {
+  const concluido= "alo alo"
   
     return(
-        <div className='footer'> /4 CONCLUÍDOS </div>
+        <div className='footer'>{props.conclui} /4 CONCLUÍDOS </div>
     )
     
 }
+
