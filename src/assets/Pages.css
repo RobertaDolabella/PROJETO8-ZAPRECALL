@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive&family=Righteous&display=swap');
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 20px 0;
+}
+
+.logo {
+    width: 34%;
+    margin-top: 25%;
+}
+.button {
+    width: 200px;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 25%;
+    background: #FFFFFF;
+    border: 1px solid;
+    border-color: #D70900;
+    font-family: 'Recursive', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #D70900;
+}
+
+.Page {
+    background-color: #FB6B6B;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.footer {
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    align-content: center;
+}
+
+.FlashCards {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.container-pergunta {
+    width: 75%;
+    height: 60px;
+    margin: 20px 0;
+}
+
+.pergunta {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    flex-wrap: wrap;
+}
+
+.resposta {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 0px 20px;
+    background-color: #FFFFD5;
+}
+
+.buttons-resposta {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.button-nao-lembrei {
+    background: #FF3030;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 86px;
+    height: 38px;
+}
+
+.button-quase-nao-lembrei {
+    background: #FF922E;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 86px;
+    height: 38px;
+}
+
+.button-zap {
+    background: #2FBE34;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 86px;
+    height: 38px;
+}
+
+.nao-lembrei{
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration-line: line-through;
+    color: #FF3030;
+    text-decoration-line: line-through;
+}
+.quase-nao-lembrei{
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration-line: line-through;
+    color: #FF922E;
+    text-decoration-line: line-through;
+}
+.zap{
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration-line: line-through;
+    color:#2FBE34;
+    text-decoration-line: line-through;
+}
+
+.pergunta>button {
+    border: 0px;
+    background-color: #FFFFFF;
+}
+
+ion-icon {
+    font-size: 28px;
+}
+
+.off {
+    display: none;
+}
